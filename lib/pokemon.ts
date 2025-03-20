@@ -16,6 +16,6 @@ export const getPokemonList = cache(async () => {
 
 export const getPokemonDetails = cache(async (pokemonName: string) => {
   const res = await fetch(`${API_URL}/pokemon/${pokemonName}`);
-  if (!res.ok) throw new Error('Failed to fetch Pokémon details');
+  if (!res.ok) throw new Error('Failed to fetch Pokemon details');
   return res.json();
 });
