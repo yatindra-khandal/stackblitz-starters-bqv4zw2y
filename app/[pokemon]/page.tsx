@@ -1,23 +1,23 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import { getPokemonDetails } from '../../lib/pokemon';
+import Image from "next/image";
+import Link from "next/link";
+import { getPokemonDetails } from "../../lib/pokemon";
 
 export default async function PokemonDetail({
   params,
 }: {
-  params: { pokemonName: string };
+  params: { pokemon: string };
 }) {
-  const pokemon = await getPokemonDetails(params.pokemonName);
+  const pokemon = await getPokemonDetails(params.pokemon);
 
   return (
     <div className="container mx-auto p-4 max-w-lg">
       <nav className="mb-4 text-blue-500">
-        <Link href="/">Home</Link> →{' '}
+        <Link href="/">Home</Link> →{" "}
         <span className="font-bold">{pokemon.name.toUpperCase()}</span>
       </nav>
       <div className="bg-white shadow-lg rounded-lg p-6 text-center">
         <Image
-          src={pokemon.sprites.other['official-artwork'].front_default}
+          src={pokemon.sprites.other["official-artwork"].front_default}
           alt={pokemon.name}
           width={200}
           height={200}

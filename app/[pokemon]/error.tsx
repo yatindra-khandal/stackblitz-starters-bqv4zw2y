@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { useEffect } from 'react';
-import Link from 'next/link';
+import { useEffect } from "react";
+import Link from "next/link";
 
 export default function ErrorBoundary({
   error,
@@ -11,7 +11,7 @@ export default function ErrorBoundary({
   reset: () => void;
 }) {
   useEffect(() => {
-    console.error('Error fetching Pokémon details:', error);
+    console.error("Error fetching Pokemon details:", error);
   }, [error]);
 
   return (
@@ -19,7 +19,7 @@ export default function ErrorBoundary({
       <h1 className="text-2xl font-bold text-red-500">
         Oops! Something went wrong.
       </h1>
-      <p className="mt-2">Failed to load Pokémon details. Please try again.</p>
+      <p className="mt-2">Failed to load Pokemon details. Please try again.</p>
       <div className="mt-4">
         <button
           onClick={reset}
